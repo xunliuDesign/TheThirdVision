@@ -358,11 +358,14 @@ body {
     font-size: 15px;
 }
 
+
+
 .layers-control {
         z-index: 1;
         display: block;
         margin-left: -20px;
         width: 220px;
+
     }
 
     .layers-control h3 { 
@@ -371,17 +374,19 @@ body {
 
     .layers-control a {
         font-size: 15px;
-        color: black;
+        color: #E0E0E0;
         display: block;
         margin:5px;
         padding-left: 10px;
         text-align: left;
-        background-color: darkgrey;
+        background-color: #404040;
         border-radius: 5px;
+
     }
 
     .layers-control a.active {
         background-color: white;
+        color:black;
     }
 
     .layers-control a:hover {
@@ -401,6 +406,7 @@ body {
     padding: 10px;
     position: absolute;
     right: 10px;
+    width:100px;
     z-index: 1;
   }
  

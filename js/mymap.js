@@ -23,6 +23,10 @@ var map = new mapboxgl.Map({
     pitch: city.pitch,
 });
 
+$("#legend-1").hide();
+$("#legend-2").hide();
+$("#legend-3").hide();
+$("#legend-4").hide();
 
 ////////////////////////
 // select city
@@ -155,10 +159,10 @@ var layers2 = [
     map.on('load', function () {
            
         for (i=0; i<layers1.length; i++) {
-            $("#layers-control1").append("<a href='#' class='active button-default' id='" + layers1[i][0] + "'>" + layers1[i][1] + "</a>"); // see http://api.jquery.com/append/
+            $("#layers-control1").append("<a href='#' class=' button-default' id='" + layers1[i][0] + "'>" + layers1[i][1] + "</a>"); // see http://api.jquery.com/append/
         }
         for (i=0; i<layers2.length; i++) {
-            $("#layers-control2").append("<a href='#' class='active button-default' id='" + layers2[i][0] + "'>" + layers2[i][1] + "</a>"); 
+            $("#layers-control2").append("<a href='#' class=' button-default' id='" + layers2[i][0] + "'>" + layers2[i][1] + "</a>"); 
         }
 
         // show/hide layers when button is clicked
@@ -200,10 +204,31 @@ var layers2 = [
                     map.setLayoutProperty(clickedLayer, 'visibility', 'visible'); 
                 }
 
+                     //change legend
+            if(map.getLayoutProperty('Q2_Average','visibility')=='visible'){
+                $("#legend-1").show();
+                }else{
+                $("#legend-1").hide();
+                }
+            if(map.getLayoutProperty('Q3_Average','visibility')=='visible'){
+                $("#legend-2").show();
+                }else{
+                $("#legend-2").hide();
+                }
+             if(map.getLayoutProperty('Q4_Average','visibility')=='visible'){
+                $("#legend-3").show();
+                }else{
+                $("#legend-3").hide();
+                }
+             if(map.getLayoutProperty('Q5_Average','visibility')=='visible'){
+                $("#legend-4").show();
+                }else{
+                $("#legend-4").hide();
+                }
+
                 },1000)
 
-            //map zoomout then zoomin
-
+            //map zoomout then zoom
               setTimeout(function(){
                   map.flyTo({
                         center: city.center,
@@ -215,7 +240,6 @@ var layers2 = [
                         easing: function (t) { return t; }
                     });
                 },1000);
-                
         });
 
         $("#layers-control2>a").on('click', function(e) {
