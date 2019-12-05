@@ -1,0 +1,202 @@
+<!doctype html>
+<!-- Head -->
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap core CSS -->
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+\  <!-- Custom styles for this template -->
+  <link href="./css/mystyle.css" rel="stylesheet">
+   <!-- Add Google Fonts support -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+  <!--  Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+  <!-- Mapbox-->
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+
+  <title>A third Vision</title>
+  <link rel="icon" type="image/png" href="img/icon.png">
+</head>
+
+
+<body>
+
+  <!-- HEADER --> 
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <!-- Logo -->
+      <a class="navbar-brand" id="logo" href="index.html">3rd VISION</a>
+      <!-- Nav-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="exhibition.html">Exhibition</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="methods.html">Methods</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="map.html">Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="team.html">Team</a>
+          </li>
+        </ul>
+        <div class="form-inline mt-2 mt-md-0">
+          <button id="myBtn_rateImage" class="btn btn-outline-dark my-2 my-sm-0">Rate an Image</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+  <main role="main">
+    <div id="map"></div>
+
+    <!--dropdown-->
+    <div id="dropdown">
+       <div class="row">
+        <select id="selectCity">
+          <option value="sh">Shanghai</option>
+          <option value="nyc">New York City</option>
+          <option value="sf">San Francisco</option>
+          <option value="bos">Boston</option>
+          <option value="seattle">Seattle</option>
+          <option value="london">London</option>
+        </select>
+            <i class="fa fa-question-circle popup" style="font-size:25px;color:grey" onclick="myPopup('myPopupQues-01')">
+              <span class="popuptext" id="myPopupQues-01">Select to Navigate to another City<br> Overall Score Evaluation across 5 other Global Innovative Cities with Shanghai <br>
+              <br>
+              <a href="methods.html#highlight3">More Information</a>
+              </span>
+            </i>     
+        </div>
+
+    <!--display mode-->
+      <div id="visLayers" class="row">
+          <label id="mySwitch" class="switch">
+            <input class="switch-input" type="checkbox" />
+            <span class="switch-label" data-on="Display: Prediction" data-off="Display: Sample Images"></span> 
+            <span class="switch-handle"></span> 
+          </label>
+            <i class="fa fa-question-circle popup" style="font-size:25px;color:grey" onclick="myPopup('myPopupQues-02')">
+              <span class="popuptext" id="myPopupQues-02">In "Sample Image" Mode, street images on specific locations will display.<br><br> 
+              In "Prediction" Mode, average scores over the city will display.<br><br>
+              Visualize other geographic information layers below<br><br>
+              <a href="methods.html#highlight2">More Information</a>
+            </span>
+            </i>
+        </div>
+        <br>
+      <div class="layers-control" id="layers-control1"> </div>
+      <div class="layers-control" id="layers-control2"> </div>
+
+
+   </div>
+
+    <!-- Legend -->
+        <div id='score-legend' class='legend'>
+        <h4>Score</h4>
+            <div><span style='background-color: #0bfc03'></span>10</div>
+            <div><span style='background-color: #b1fc03'></span>7.5</div>
+            <div><span style='background-color: #fce703'></span>5</div>
+            <div><span style='background-color: #fc8403'></span>2.5</div>
+            <div><span style='background-color: #fc0303'></span>0</div>
+        </div>
+
+
+    <!-- The Modal -->
+    <div id="myModal_rateImage" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        
+        <span class="close">&times;</span> 
+        <h4>Rate an image</h4>
+
+        <div>
+
+            <form action="map.html">
+
+              <p> 1. Please Choose the type of space the image represents:</p>
+              <img src= "./img/rating/99.jpeg" alt="image to rate" style="width: 100%;">
+              <input type="radio" name="type" value="urban">Urban &nbsp&nbsp
+              <input type="radio" name="type" value="outskirt"> Outskirt &nbsp&nbsp
+              <input type="radio" name="type" value="waterfront"> Waterfront &nbsp&nbsp
+              <input type="radio" name="type" value="rural"> Rural &nbsp&nbsp
+              <input type="radio" name="type" value="Industrial"> Industrial &nbsp&nbsp
+
+              <br><br>
+              <p> 2.Please choose the photo you feel better enclosure:</p>
+              <img src= "./img/rating/228.jpeg" alt="image to rate" style="width: 49%;">
+              <img src= "./img/rating/149.jpeg" alt="image to rate" style="width: 49%;">
+
+              <br><br>
+              <p> 3.Please choose the photo you feel better human scale:</p>
+              <img src= "./img/rating/472.jpeg" alt="image to rate" style="width: 49%;">
+              <img src= "./img/rating/489.jpeg" alt="image to rate" style="width: 49%;">
+
+
+              <br><br>
+              <p> 4.Please choose the photo you feel better diversity: </p>
+              <img src= "./img/rating/149.jpeg" alt="image to rate" style="width: 49%;">
+              <img src= "./img/rating/99.jpeg" alt="image to rate" style="width: 49%;">
+
+              <br><br>
+              <p> 5.Please choose the photo you feel better transparency:</p>
+              <img src= "./img/rating/489.jpeg" alt="image to rate" style="width: 49%;">
+              <img src= "./img/rating/228.jpeg" alt="image to rate" style="width: 49%;">
+
+              <br><br>
+              <input type="submit" value="Submit">
+
+            </form>
+
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+    </div>
+
+    <!-- FOOTER --> 
+        <footer class="footer">
+          <p>© 2019 Shenzhen 2019 Bi-City Bienale of Urbanism/Architecture</p>
+        </footer>
+      </main>
+
+
+   
+  </body>
+
+
+     <!-- JavaScript -->
+     <script src="./js/jquery-3.2.1.slim.min.js" ></script>
+     <script src="./js/popper.min.js"></script>
+     <script src="./js/bootstrap.min.js"></script>
+     <script src="./js/mymap.js"></script>
+
+
+</html>

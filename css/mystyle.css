@@ -1,0 +1,491 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  font-family: 'Roboto', sans-serif;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+  color: #5a5a5a;
+  background: black;
+}
+
+.footer {
+  position: fixed;
+  bottom:10px;
+  left:10px;
+  font-size:10pt;
+  color:darkgrey;
+}
+.footer2{
+   position: fixed;
+  bottom:10px;
+  left:10px;
+  font-size:10pt;
+  color:darkgrey;
+  background:black;
+  opacity: 0.7;
+}
+
+.btn {
+  border-width: : 4px;
+  border-color: #499B8F;
+  color:white;
+}
+
+.btn:hover{
+  background-color: #499B8F;
+  color:white;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+#myCarousel{
+  width:100%;
+}
+.carousel {
+  margin-bottom: 0rem;
+}
+
+.carousel-item {
+  height: 60rem;
+  background-color: black;
+}
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 50px;
+    width: 50px;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 1rem 0; /* Space out the Bootstrap <hr> more */
+  border: 1px solid dimgray;
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 400;
+  line-height: 1;
+  color: #499B8F;
+}
+.lead{
+  color:white;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+/* subtitle*/
+.subtitle{
+  margin:12rem 6rem 3rem 3rem;
+}
+
+
+/* Update Bootstrap
+-------------------------------------------------- */
+.navbar-dark,.navbar-light{
+  position: fixed;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-right:20px;
+}
+
+.navbar-dark{
+  background-color: black;
+  opacity: 0.7;
+}
+
+.hideNavbar{
+  display: hide;
+}
+#logo{
+  color:#499B8F;
+}
+
+
+
+/* Modal Content 
+----------------------------------------------------*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  padding-bottom: 100px;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  opacity:1;
+
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: rgba(0,0,0,0.7);
+  margin: auto;
+  padding: 40px;
+  width: 80%;
+  color: white;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 25px;
+}
+
+
+/*video*/
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%; 
+}
+
+.content {
+  position: fixed;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.link
+{
+   color:white;
+   text-decoration: none; 
+   background-color: none;
+
+}
+.link:hover{
+    color: #499B8F;
+    text-decoration:underline;
+    text-decoration-color: #499B8F;
+    background-color: none;
+
+}
+
+#selectCity{
+    width:210px;
+    margin: 0 5px 5px 0;
+
+}
+
+/* switch*/
+.switch {
+  position: relative;
+  display: block;
+  vertical-align: top;
+  width: 210px;
+  height: 25px;
+  margin: 0 5px 5px 0;
+  background: white;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing:content-box;
+}
+.switch-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  box-sizing:content-box;
+}
+.switch-label {
+  position: relative;
+  display: block;
+  height: inherit;
+  font-size: 15px;
+  background: #eceeef;
+  border-radius: inherit;
+  box-sizing:content-box;
+}
+.switch-label:before, .switch-label:after {
+  position: absolute;
+  top: 50%;
+  margin-top: -.5em;
+  line-height: 1;
+  -webkit-transition: inherit;
+  -moz-transition: inherit;
+  -o-transition: inherit;
+  transition: inherit;
+  box-sizing:content-box;
+}
+.switch-label:before {
+  content: attr(data-off);
+  right: 11px;
+  color: black;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+.switch-label:after {
+  content: attr(data-on);
+  left: 11px;
+  color: white;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+}
+.switch-input:checked ~ .switch-label {
+  background: #499B8F;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.switch-input:checked ~ .switch-label:before {
+  opacity: 0;
+}
+.switch-input:checked ~ .switch-label:after {
+  opacity: 1;
+}
+.switch-handle {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  background: white;
+  border-radius: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+.switch-handle:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -6px 0 0 -6px;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+  border-radius: 6px;
+}
+.switch-input:checked ~ .switch-handle {
+  left: 185px;
+  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+ 
+/* Transition
+========================== */
+.switch-label, .switch-handle {
+  transition: All 0.3s ease;
+  -webkit-transition: All 0.3s ease;
+  -moz-transition: All 0.3s ease;
+  -o-transition: All 0.3s ease;
+}
+
+/* Mapbox
+-------------------------------------------------- */
+
+#map { 
+  width: 100%; 
+  height: 100%; 
+  position: absolute; 
+}
+
+#dropdown {
+    position: fixed;
+    left: 20px;
+    top: 100px;
+    height: 230px;
+    width:250px;
+    background-color:black;
+    opacity: 0.9;
+    color: white;
+    padding: 20px;
+}
+
+#cities {
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.popupWindow{
+    opacity:0.9;
+    width:400px;
+    font-size: 15px;
+}
+
+.layers-control {
+        z-index: 1;
+        display: block;
+        margin-left: -20px;
+        width: 220px;
+    }
+
+    .layers-control h3 { 
+        line-height: initial;
+    }
+
+    .layers-control a {
+        font-size: 15px;
+        color: black;
+        display: block;
+        margin:5px;
+        padding-left: 10px;
+        text-align: left;
+        background-color: darkgrey;
+        border-radius: 5px;
+    }
+
+    .layers-control a.active {
+        background-color: white;
+    }
+
+    .layers-control a:hover {
+        background-color: #499B8F;
+    }
+    .layers-control a.active:hover {
+        background: #499B8F;
+    }
+
+
+.legend {
+    background-color: black;
+    opacity: 0.8;
+    color:white;
+    border-radius: 3px;
+    bottom: 30px;
+    padding: 10px;
+    position: absolute;
+    right: 10px;
+    z-index: 1;
+  }
+ 
+.legend h4 {
+    margin: 0 0 10px;
+    font-size: 15px;
+}
+ 
+.legend div span {
+    font-size:8px;
+    border-radius: 50%;
+    display: inline-block;
+    height: 8px;
+    margin-right: 5px;
+    width: 10px;
+}
+
+
+/* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+/* The actual popup */
+.popup .popuptext {
+  font-family: 'Roboto', sans-serif;
+  font-size:15px;
+  visibility: hidden;
+  width: 250px;
+  background-color: white;
+  color: black;
+  text-align: left;
+  border-radius: 5px;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+  top: 0%;
+  left: 125%;
+  margin-left: 10px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: 0px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+.fa .fa-question-circle{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+
+.teamMember:hover img {
+    -webkit-filter: invert(100%);
+}
+
